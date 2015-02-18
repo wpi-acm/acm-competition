@@ -1,0 +1,30 @@
+{
+	"name": "Test Challenge #1",
+	"tag": "test",
+	"weights": {
+		"dev": 1.0,
+		"spd": 1.0,
+		"mem": 0.5
+	},
+	"description": "<p>Read from stdin and print the same output but with a !</p>",
+	"sample": {
+		"test_cases": [
+			"sample",
+			"This is what I expect"
+		],
+		"solutions": [
+			"sample!",
+			"This is what I expect!"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"official",
+			"official2"
+		],
+		"solutions": [
+			"official!",
+			"official2!"
+		]
+	}
+}

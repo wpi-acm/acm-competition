@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% set extra_style = ["challenge"] %}
+{% set active_page = "challenges" %}
+
+{% block main %}
+<section id="name">
+	<h2>{{ challenge.name }}</h2>
+	<ul>
+		<li>{{ challenge.weights['dev'] }}x Dev. Speed</li>
+		<li>{{ challenge.weights['spd'] }}x Time Eff.</li>
+		<li>{{ challenge.weights['mem'] }}x Memory Eff.</li>
+	</ul>
+</section>
+<section id="description">
+	<h3>Description</h3>
+	{{ challenge.description|safe }}
+</section>
+<section id="sample">
+	<h3>Sample</h3>
+	<div id="sample-input" class="sample-section">
+		<h4>Input</h4>
+		<div class="sample-content">
+			{{ challenge.sample_input_as_html()|safe }}
+		</div>
+	</div>
+	<div id="sample-output" class="sample-section">
+		<h4>Output</h4>
+		<div class="sample-content">
+			{{ challenge.sample_output_as_html()|safe }}
+		</div>
+	</div>
+	<p id="tip">Each test case (separated by "-----") is piped into a different instance of your code.</p>
+</section>
+{% if error %}
+<section>
+	<div class="error">
+		{{ error }}
+	</div>
+</section>
+{% endif %}
+{% if results -%}
+<section id="results">
+{% if check -%}
+	<div class="correct">
+		<p>Your solution was correct!</p>
+		{% if not test -%}<p>You scored: {{ '%.2f' % points }} points.</p>{% endif -%}
+	</div>
+{% else -%}
+	<div class="error">
+		<p>Your solution was incorrect!</p>
+	</div>
+{% endif -%}
+{% if test -%}
+	<div class="compile-message">
+		<h3>Compiler Message</h3>
+		<p>{{ raw_results['compilemessage']|nl2br|safe }}</p>
+	</div>
+	{% for i, result in results -%}
+	<div class="result">
+		<div class="stats">
+			<h3>stats</h3>
+			<p>time: {{ result['time'] }} s</p>
+			<p>memory: {{ result['memory'] }}</p>
+			<p>exit code: {{ result['signal'] or 0 }}</p>
+		</div>
+		<div class="stdout">
+			<h3>stdout</h3>
+			{{ result['stdout']|nl2br }}
+		</div>
+		<div class="stderr">
+			<h3>stderr</h3>
+			{{ result['stderr']|nl2br }}
+		</div>
+	</div>
+	{% endfor -%}
+{% endif -%}
+</section>
+{% endif -%}
+<section id="submit">
+	<h3>Submit</h3>
+	<p>Upload your source code (<strong>not</strong> your binary).</p>
+	<form id="submit-form" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<select required name="lang" id="language">
+				<option value="">Choose Language</option>
+				{% for code, lang in g.langs -%}
+				<option value="{{ code }}">{{ lang }}</option>
+				{% endfor -%}
+			</select>
+			<input required type="file" name="file">	
+		</div>
+		<div class="form-group">
+			<input title="Run using sample code above (shows output; no points)." type="submit" name="submit" value="Test">
+			<input title="Run using official code (for points)." type="submit" name="submit" value="Submit">
+		</div>
+	</form>
+</section>
+{% endblock main %}

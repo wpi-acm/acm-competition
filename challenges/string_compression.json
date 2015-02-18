@@ -1,0 +1,42 @@
+{
+	"name": "Basic String Compression",
+	"tag": "string_compression",
+	"weights": {
+		"dev": 1.0,
+		"spd": 1.5,
+		"mem": 1.5
+	},
+	"description": "<p>Implement a method to perform basic string compression using the counts of repeated characters. If the compressed string would not become smaller than the original string, your method should return the original string. Your function should work with any ASCII character.</p>",
+	"sample": {
+		"test_cases": [
+			"SNAKE?",
+			"SNAKE?!",
+			"SNAAAAAAKEEEEEEEEE!!!!!!!!!!!!"
+		],
+		"solutions": [
+			"SNAKE?",
+			"SNAKE?!",
+			"S1N1A6K1E9!12"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"aabcccccaaa",
+			"aab",
+			"aabb",
+			"SNAKE?",
+			"SNAKE?!",
+			"SNAAAAAAKEEEEEEEEE!!!!!!!!!!!!",
+			"aaaabbbbbbc"
+		],
+		"solutions": [
+			"a2b1c5a3",
+			"aab",
+			"aabb",
+			"SNAKE?",
+			"SNAKE?!",
+			"S1N1A6K1E9!12",
+			"a4b6c1"
+		]
+	}
+}

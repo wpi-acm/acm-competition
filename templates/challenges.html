@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% set extra_style = ["challenges"] %}
+{% set active_page = "challenges" %}
+
+{% block main %}
+<h2>Challenges</h2>
+<ul id="challenges">
+{% for i, challenge in challenges -%}
+	<li><a href="{{ url_for('challenges', challenge_id=i) }}">{{ challenge }}</a></li>
+{% endfor -%}
+</ul>
+{% endblock main %}

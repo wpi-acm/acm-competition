@@ -1,0 +1,30 @@
+@import "style.scss";
+
+
+.leaderboard {
+	text-align: left;
+	border: 1px $grey solid;
+
+	thead {
+		border-bottom: 1px $grey solid;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	tbody tr:nth-child(odd) td {
+		background-color: #ddd;
+	}
+
+	th, td {
+		padding: 4px;
+	}
+
+	td.points {
+		text-align: center;
+	}
+}
+
+.challenge-leaderboard-section {
+	float: left;
+	margin-right: 16px;
+}

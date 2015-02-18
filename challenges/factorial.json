@@ -1,0 +1,48 @@
+{
+	"name": "Trailing Zero Factorial",
+	"tag": "factorial",
+	"weights": {
+		"dev": 0.5,
+		"spd": 2.0,
+		"mem": 3.0
+	},
+	"description": "<p>Write an algorithm which computes the number of <strong>trailing</strong> zeros in n factorial.</p>",
+	"sample": {
+		"test_cases": [
+			"0",
+			"5",
+			"42",
+			"9001",
+			"75000",
+			"1000000"
+		],
+		"solutions": [
+			"0",
+			"1",
+			"9",
+			"2248",
+			"18748",
+			"249998"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"0",
+			"5",
+			"42",
+			"9001",
+			"75000",
+			"1000000",
+			"10000000"
+		],
+		"solutions": [
+			"0",
+			"1",
+			"9",
+			"2248",
+			"18748",
+			"249998",
+			"2499999"
+		]
+	}
+}

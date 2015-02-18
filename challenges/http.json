@@ -1,0 +1,26 @@
+{
+	"name": "HTTP Client",
+	"tag": "http",
+	"weights": {
+		"dev": 3.0,
+		"spd": 1.0,
+		"mem": 5.0
+	},
+	"description": "<p>Write a program that sends a POST request to the URL provided in stdin on port 80. Set the User-Agent of the request to 'CHALLENGE' and print response body. Note that hackerrank limits some of the APIs available in a few of the languages.</p>",
+	"sample": {
+		"test_cases": [
+			"blazer.wifi.wpi.edu:5000/sample"
+		],
+		"solutions": [
+			"Sample page!"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"blazer.wifi.wpi.edu:5000/sample"
+		],
+		"solutions": [
+			"Sample page!"
+		]
+	}
+}

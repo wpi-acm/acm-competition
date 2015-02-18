@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% set extra_style = ["index"] %}
+{% set active_page = "index" %}
+
+{% block main %}
+<section>
+	<h2>How It Works</h2>
+	<ol id="how-it-works">
+		<li>Read challenge.</li>
+		<li>Write code to read from stdin, solve challenge, and print to stdout.</li>
+		<li>???</li>
+		<li>PROFIT!</li>
+	</ol>
+</section>
+<section>
+	<h2>Rules</h2>
+	<ul id="rules">
+		<li>No partial credit.</li>
+		<li>One person per username.</li>
+		<li>Don't try to break the system.</li>
+		<li>Submit original code only (no reusing old code for entire solution).</li>
+	</ul>
+</section>
+<section>
+	<h2>Boring Details</h2>
+	<ul id="details">
+		<li>You can submit an unlimited number of times.</li>
+		<li>You're scored on three categories: Development Speed, Time Efficiency and Memory Efficiency.</li>
+		<li>The best solution in each category scores a full 100 points. The worst scores 50 and sets the curve for everyone else.</li>
+		<li>Each challenge has point multipliers for each category. Harder challenges have higher multipliers.</li>
+		<li>Submitting with "Test" will give you errors and runtime stats, but no points.</li>
+		<li>Click <a href="https://www.hackerrank.com/environment">here</a> for details on the environment.</li>
+	</ul>
+</section>
+<section>
+	<h2>Available Languages</h2>
+	<p>{{ langs }}</p>	
+</section>
+<section>
+	<h2>Prizes</h2>
+	<p>Prizes are as follows:</p>
+	<ul id="prizes">
+		<li>1st place: $200 Amazon Gift Card</li>
+		<li>2nd place: $100 Amazon Gift Card</li>
+		<li>3rd place: $50 Amazon Gift Card</li>
+	</ul>
+</section>
+{% endblock main %}

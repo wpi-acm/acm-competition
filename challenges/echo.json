@@ -1,0 +1,30 @@
+{
+	"name": "Echo",
+	"tag": "echo",
+	"weights": {
+		"dev": 0.1,
+		"spd": 0.0,
+		"mem": 0.0
+	},
+	"description": "<p>Write a program that reads one line and prints it back out to stdout.</p>",
+	"sample": {
+		"test_cases": [
+			"sample",
+			"This is what I expect"
+		],
+		"solutions": [
+			"sample",
+			"This is what I expect"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"official",
+			"It can get pretty crazy in here!"
+		],
+		"solutions": [
+			"official",
+			"It can get pretty crazy in here!"
+		]
+	}
+}

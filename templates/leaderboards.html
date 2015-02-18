@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% set extra_style = ["leaderboards"] %}
+{% set active_page = "leaderboards" %}
+
+{% block main %}
+<section>
+	<h2>Overall</h2>
+	<table class="leaderboard">
+		<thead>
+			<tr>
+				<th colspan="2">Username</th>
+				<th>Points</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for i, user in leaders -%}
+			<tr>
+				<td class="place">{{ i }}</td>
+				<td class="username">{{ user.username }}</td>
+				<td class="points">{{ '%.2f' % g.Challenge.get_user_points(user.username) }}</td>
+			</tr>
+			{% endfor -%}
+		</tbody>
+	</table>
+</section>
+{% for challenge in challenges -%}
+<section class="challenge-leaderboard">
+	<h2>{{ challenge.name }}</h2>
+	{% if challenge.has_no_solutions() %}
+	<p>This problem has not been solved.</p>
+	{% else %}
+	<div class="overall">
+		<div class="challenge-leaderboard-section overall">
+			<h3>Overall</h3>
+			<table class="leaderboard">
+				<thead>
+					<tr>
+						<th colspan="2">Username</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i, (user, points) in challenge.get_overall_points() -%}
+					<tr>
+						<td class="place">{{ i }}</td>
+						<td class="username">{{ user }}</td>
+						<td class="points">{{ '%.2f' % points }}</td>
+					</tr>
+					{% endfor -%}
+				</tbody>
+			</table>	
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="categories">
+	{% for name, section in challenge.leaderboards.iteritems() -%}
+		<div class="challenge-leaderboard-section">
+			<h3>{{ name }}</h3>
+			<table class="leaderboard">
+				<thead>
+					<tr>
+						<th colspan="2">Username</th>
+						<th>Value</th>
+						<td>Lang</td>
+						<th>Points</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i, user, points, value, lang in section -%}
+					<tr>
+						{% if name == "Development Speed" %}
+							{% set value = value - section[0][3] %}
+							{% set unit = "s" %}
+						{% endif %}
+						{% if name == "Time Efficiency" -%}
+							{% set format_str = '%.2f' -%}
+							{% set unit = "s" %}
+						{% else -%}
+							{% set format_str = '%d' -%}
+						{% endif -%}
+						<td class="place">{{ i }}</td>
+						<td class="username">{{ user }}</td>
+						<td class="value">{{ format_str % value }}{{ unit }}</td>
+						<td class="lang">{{ g.lang_names[lang] }}</td>
+						<td class="points">{{ '%.2f' % points }}</td>
+					</tr>
+					{% endfor -%}
+				</tbody>
+			</table>	
+		</div>
+	{% endfor -%}
+	</div>
+	<div class="clear"></div>
+	{% endif %}
+</section>
+{% endfor -%}
+{% endblock main %}

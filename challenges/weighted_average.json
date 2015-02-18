@@ -1,0 +1,32 @@
+{
+	"name": "Weighted Average",
+	"tag": "weighted_average",
+	"weights": {
+		"dev": 2.0,
+		"spd": 2.0,
+		"mem": 1.0
+	},
+	"description": "<p>You are working for AdHarmonics, an online marketing firm, and have been given a set of data related to the company's daily expenditures on advertisements. Each row of data shows the date, the total cost in dollars, and the number of people who clicked on the company's ads for the day. For each set of data, compute the mean daily cost weighted on the number of clicks for that time period. Input is of form '&lt;date&gt; &lt;cost&gt; &lt;clicks&gt;'. The first row contains a single integer representing the number of rows to follow. Round your answers to the nearest cent.</p>",
+	"sample": {
+		"test_cases": [
+			"3\n2013-09-01 100 10\n2013-09-02 200 20\n2013-09-03 300 30\n",
+			"4\n9/1/2013 10213 996\n9/2/2013 11230 1234\n9/3/2013 4130 300\n9/4/2013 12433 1353\n"
+		],
+		"solutions": [
+			"233.33",
+			"10839.77"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"3\n2013-09-01 100 10\n2013-09-02 200 20\n2013-09-03 300 30\n",
+			"4\n9/1/2013 10213 996\n9/2/2013 11230 1234\n9/3/2013 4130 300\n9/4/2013 12433 1353\n",
+			"4\n9/1/2013 10213 996\n9/2/2013 11230 1234\n9/3/2013 4128 300\n9/4/2013 12432 1353\n"
+		],
+		"solutions": [
+			"233.33",
+			"10839.77",
+			"10839.26"
+		]
+	}
+}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% set navigation_bar = [('index', 'Home')] -%}
+{% set active_page = "index" %}
+
+{% block main %}
+<section>
+	<h2>Login</h2>
+	<p>You do <strong>not</strong> have to use your WPI password.</p>
+	<p>Just choose a random password so no one else can use your username. It will be deleted at the end of the competition.</p>
+	{% if error -%}
+	<div class="error">
+		<p>{{ error }}</p>
+	</div>
+	{% endif -%}
+	<form action="{{ url_for('login') }}" method="post">
+		<input type="text" name="username" placeholder="WPI username" autofocus>
+		<input type="password" name="password" placeholder="password">
+		{% if next -%}<input type="hidden" name="next" value="{{ next }}">{% endif -%}
+		<input type="submit" value="Login">
+	</form>
+</section>
+{% endblock main %}

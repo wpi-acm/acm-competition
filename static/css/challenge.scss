@@ -1,0 +1,31 @@
+@import "style.scss";
+$sample-content-padding: 16px;
+
+#tip {
+	clear: both;
+}
+
+.sample-section {
+	width: $width / 2 - $main-padding - $sample-content-padding / 2;
+	float: left;
+}
+
+.sample-content, .result {
+	background-color: $grey;
+	padding: $sample-content-padding;
+	border-radius: 2px;
+	box-shadow: 0 0 6px 0 #000 inset;
+	font-family: Menlo, Monaco, monospace;
+}
+
+#sample-input {
+	margin: 0 $sample-content-padding $sample-content-padding 0;
+}
+
+#sample-output {
+	margin: 0 0 $sample-content-padding 0;
+}
+
+.result {
+	margin: 0 0 $sample-content-padding;
+}

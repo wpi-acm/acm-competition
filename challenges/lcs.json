@@ -1,0 +1,36 @@
+{
+	"name": "Longest Common Subsequence",
+	"tag": "factorial",
+	"weights": {
+		"dev": 3.0,
+		"spd": 2.0,
+		"mem": 1.0 
+	},
+	"description": "<p>Write a program to find the least common subsequence between two strings, separated by a semicolon.</p>",
+	"sample": {
+		"test_cases": [
+			"XMJYAUZ;MZJAWXU",
+			"abcdgh;aedfhr",
+			"1234;1224533324"
+		],
+		"solutions": [
+			"MJAU",
+			"adh",
+			"1234"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"XMJYAUZ;MZJAWXU",
+			"abcdgh;aedfhr",
+			"1234;1224533324",
+			"thisisatest;testing123testing"
+		],
+		"solutions": [
+			"MJAU",
+			"adh",
+			"1234",
+			"tsitest"
+		]
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"name": "Lights",
+	"tag": "lights",
+	"weights": {
+		"dev": 3.0,
+		"spd": 4.0,
+		"mem": 2.0
+	},
+	"description": "<p>You are driving along an infinite street in a city with an infinite number of stoplights. Each time you drive by a stoplight, there is an <strong>n</strong>% chance that you will hit a red light. If you hit <strong>k</strong> lights, what is the probability that exactly <strong>r</strong> of the lights were green? Input is of form 'n k r'. Express your answers as the decimal rounded to four decimal places.</p>",
+	"sample": {
+		"test_cases": [
+			"50 100 40",
+			"10 4 3",
+			"100 100 1"
+		],
+		"solutions": [
+			"0.0108",
+			"0.2916",
+			"0"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"50 100 40",
+			"10 4 3",
+			"100 100 1",
+			"50 1000 500"
+		],
+		"solutions": [
+			"0.0108",
+			"0.2916",
+			"0",
+			"0.0252"
+		]
+	}
+}

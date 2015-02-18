@@ -1,0 +1,48 @@
+{
+	"name": "Palindromes",
+	"tag": "palindrome",
+	"weights": {
+		"dev": 1.5,
+		"spd": 1.0,
+		"mem": 0.0
+	},
+	"description": "<p>Determine whether the string is a palindrome. Ignore non-alphabet characters and letter case.</p>",
+	"sample": {
+		"test_cases": [
+			"racecar",
+			"Stanley Yelnats",
+			"A nut for a jar of tuna.",
+			"Definitely not a palindrome",
+			"?!?!"
+		],
+		"solutions": [
+			"true",
+			"true",
+			"true",
+			"false",
+			"true"
+		]
+	},
+	"official": {
+		"test_cases": [
+			"racecar",
+			"Stanley Yelnats",
+			"A nut for a jar of tuna.",
+			"Definitely not a palindrome",
+			"A Santa dog lived as a devil God at NASA.",
+			"Close but no cigar.",
+			"Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.",
+			"   1234567890-=!@#$%^&*()_+{}|:<>?[];',./'"
+		],
+		"solutions": [
+			"true",
+			"true",
+			"true",
+			"false",
+			"true",
+			"false",
+			"true",
+			"true"
+		]
+	}
+}
