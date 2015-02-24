@@ -44,10 +44,7 @@ class User(UserMixin):
 
     @classmethod
     def authenticate(cls, username, password):
-        if username not in cls._shadows:
-            cls._shadows[username] = hashlib.sha512(password).hexdigest()
-        if cls._shadows[username] == hashlib.sha512(password).hexdigest():
-            cls._users[username] = cls(username)
-            cls.update_databases()
-            return True
-        return False
+        # don't care; CAS authenticated us
+        cls._users[username] = cls(username)
+        return True
+

@@ -75,38 +75,22 @@ def load_user(userid):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if current_user.is_anonymous():
-        return redirect(url_for('login'))
+        username = request.environ.get('REMOTE_USER')
+        User.authenticate(username, '')
+        login_user(g.users.get(username))
+        return redirect(url_for('index'))
     else:
         langs = ', '.join(
             sorted(hackerrank.langs['languages']['names'].values()))
         return render_template('index.html', langs=langs)
 
 
-@app.route('/login.php', methods=['GET', 'POST'])
-def login():
-    if request.method == 'GET':
-        if current_user.is_anonymous():
-            return render_template(
-                'login.html', next=request.args.get('next', ''))
-        else:
-            return redirect(url_for('index'))
-    elif request.method == 'POST':
-        username = request.form.get('username', '')
-        password = request.form.get('password', '')
-        if username and password:
-            if User.authenticate(username, password):            
-                login_user(g.users.get(username))
-                return redirect(request.form.get("next") or url_for("index"))
-            else:
-               return render_template('login.html', error='Invalid password.') 
-        return render_template('login.html', error='Need username or password.')
-
 
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect('https://cas.wpi.edu/cas/logout')
 
 
 @app.route('/challenges.aspx')
